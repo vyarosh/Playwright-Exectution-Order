@@ -1,7 +1,6 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import * as dotenv from 'dotenv';
 
-
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -20,6 +19,9 @@ const config: PlaywrightTestConfig = {
     ['list'],
     ['html', { open: 'never', outputFolder: './playwright-report' }],
   ],
+
+  globalSetup: './global-setup',
+  globalTeardown: './global-teardown',
   projects: [
     {
       name: 'Simple',
